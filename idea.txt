@@ -1,0 +1,6 @@
+Using the github API I can maybe do something nice.
+
+Have a page showing random github repositories
+
+Have a page where users can search for repositories by programming language.
+Not that you can only search by language when you are logged in.
