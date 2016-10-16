@@ -3,11 +3,15 @@ import 'package:http/browser_client.dart';
 import 'dart:convert';
 import 'package:json_object/json_object.dart';
 import 'github_component.dart';
+import 'package:dartblog/helpers/apiparser.dart';
+import 'package:dartblog/services/github_service.dart';
+import 'package:dartblog/repository_component.dart';
 
 @Component(
 selector: 'my-app',
 templateUrl: '../web/app_component.html',
-directives: const [GithubComponent]
+directives: const [GithubComponent],
+providers: const [GithubService]
 )
 
 /**
@@ -22,9 +26,9 @@ class AppComponent{
 
   BrowserClient browserClient;
 
+  final GithubService _githubService;
 
-
-  AppComponent(BrowserClient browserClient){
+  AppComponent(BrowserClient browserClient, this._githubService){
     print("running the app component"); // this is like console.log when running in the browser
     fetchGithubRepositories();
     this.browserClient = browserClient;
@@ -46,6 +50,14 @@ class AppComponent{
 
     data.items.forEach((i) => print(i.name));
 
+    print("calling response body");
+
+    Apiparser parser = new Apiparser();
+    print("parser created");
+    //GithubComponent gc = parser.parseToComponent(response.body);
+    print(parser.parseToComponent(response.body));
+
+    this._githubService.addComponents(new RepositoryComponent("Ana","test","test","test"));
   }
 
 

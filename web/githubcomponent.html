@@ -1,3 +1,9 @@
 <h1>
-    github unit!
+    recent javascript repositories!
 </h1>
+
+<div id="repositoryList">
+    <li *ngFor="let repo of repoList">
+        {{repo.name}}
+    </li>
+</div>
