@@ -4,6 +4,6 @@
 
 <div id="repositoryList">
     <li *ngFor="let repo of repoList">
-        {{repo.name}}
+        <a [attr.href]="repo.url">{{repo.shortName}} by {{repo.author}}</a>
     </li>
 </div>

@@ -1,5 +1,8 @@
 import 'package:angular2/core.dart';
 import 'package:dartblog/repository_component.dart';
+import 'package:dartblog/model/repository.dart';
+import 'dart:async';
+import 'package:dartblog/helpers/apihelper.dart';
 
 /**
  * Service for the github panels.
@@ -8,28 +11,31 @@ import 'package:dartblog/repository_component.dart';
 @Injectable()
 class GithubService{
 
-    List<RepositoryComponent> repositories;
+    Future<List<Repository>> repositories;
 
     GithubService(){
-        this.repositories = new List<RepositoryComponent>();
-        this.repositories.add(new RepositoryComponent("Dylan","test","test","test"));
+
     }
 
-    List<RepositoryComponent> getRepositories(){
+    Future<List<Repository>> getRepositories()  {
         return this.repositories;
     }
 
-    // Adds new components to the list
-    void addComponents(List<RepositoryComponent> newComponents){
-        repositories.addAll(newComponents);
-        print("added components");
-        print(repoList);
+    Future<List<Repository>> getRecentJavascriptRepositories() async {
+        Apihelper helper = new Apihelper();
+        return await helper.getRecentJavascriptRepositories();
     }
 
     // Adds new components to the list
-    void addComponent(RepositoryComponent newComponents){
+    void addComponents(List<Repository> newComponents){
+        repositories.addAll(newComponents);
+        print("added components");
+    }
+
+    // Adds new components to the list
+    void addComponent(Repository newComponents){
         repositories.add(newComponents);
+        this.repositories = repositories.toList();
         print("added component");
-        print(repoList);
     }
 }

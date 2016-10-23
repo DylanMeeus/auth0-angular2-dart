@@ -1,5 +1,6 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/platform/browser.dart';
+import 'package:dartblog/model/repository.dart';
 
 @Component(
     selector: 'github-component',
@@ -12,15 +13,4 @@ import 'package:angular2/platform/browser.dart';
  */
 class RepositoryComponent{
 
-  String name;
-  String fullname;
-  String owner;
-  String url;
-
-  RepositoryComponent(String name, String fullname, String owner, String url){
-    this.name = name;
-    this.fullname = fullname;
-    this.owner = owner;
-    this.url = url;
-  }
 }

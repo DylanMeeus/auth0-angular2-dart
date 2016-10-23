@@ -9,6 +9,7 @@ dependencies:
   dart_to_js_script_rewriter: ^1.0.1
   http: ^0.11.3
   json_object: any
+  observe: any
 transformers:
 - angular2:
     platform_directives:
