@@ -3,7 +3,6 @@ import 'package:http/browser_client.dart';
 import 'dart:convert';
 import 'package:json_object/json_object.dart';
 import 'github_component.dart';
-import 'package:dartblog/public_component.dart';
 import 'package:dartblog/helpers/apihelper.dart';
 import 'package:dartblog/services/github_service.dart';
 import 'package:dartblog/repository_component.dart';
@@ -12,17 +11,10 @@ import 'package:angular2/router.dart';
 
 
 @Component(
-selector: 'my-app',
-templateUrl: '../web/app_component.html',
-directives: const [GithubComponent,ROUTER_DIRECTIVES],
-providers: const [GithubService,ROUTER_PROVIDERS]
-)
-
-
-
-@RouteConfig(const[
-  const Route(path: '/public', name: 'Public', component: PublicComponent)
-]
+    selector: 'public-repolist',
+    templateUrl: '../web/app_component.html',
+    directives: const [GithubComponent,ROUTER_DIRECTIVES],
+    providers: const [GithubService,ROUTER_PROVIDERS]
 )
 
 
@@ -32,14 +24,12 @@ providers: const [GithubService,ROUTER_PROVIDERS]
  * We can also navigate to the login here, or go to the 'search' feature.
  * When navigating to the search feature, we will redirect to the login page if the user is not yet logged in.
  */
-class AppComponent{
+class PrivateComponent{
 
-  String title = "Random github repositories";
+    String title = "Random github repositories";
 
-  AppComponent(){
-    print("running the app component"); // this is like console.log when running in the browser
-  }
-
-
+    PrivateComponent(){
+        print("running the app component"); // this is like console.log when running in the browser
+    }
 }
 

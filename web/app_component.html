@@ -15,13 +15,9 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a [routerLink]="['Public']">Public</a></li>
                     <li><a href="#">Contact</a></li> <!-- Need to control this with the angular router -->
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                    <router-outlet></router-outlet>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

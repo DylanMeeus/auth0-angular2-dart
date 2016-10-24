@@ -17,8 +17,6 @@ import 'dart:async';
  * Renders a list of github repositories
  */
 class GithubComponent{
-  // We probably need to pass this class some repo components?
-  // so it holds a set of them
 
     Future<List<Repository>> repoList; // this should be an observable.
 
@@ -28,13 +26,9 @@ class GithubComponent{
         this.getRepositories();
     }
 
-    // this should depend on the page where the request is made.
     Future<Null> getRepositories() async {
-        print("Getting the recent javascript components");
-        var x = await (_githubService.getRecentJavascriptRepositories());
-        print("Got the javascript components hopefully");
-        print(x);
-        this.repoList = x;
+        var repositories = await (_githubService.getRecentJavascriptRepositories());
+        this.repoList = repositories;
     }
 
 }
