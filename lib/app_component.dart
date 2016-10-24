@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:json_object/json_object.dart';
 import 'github_component.dart';
 import 'package:dartblog/public_component.dart';
+import 'package:dartblog/private_component.dart';
+import 'package:dartblog/login_component.dart';
 import 'package:dartblog/helpers/apihelper.dart';
 import 'package:dartblog/services/github_service.dart';
 import 'package:dartblog/repository_component.dart';
@@ -21,7 +23,9 @@ providers: const [GithubService,ROUTER_PROVIDERS]
 
 
 @RouteConfig(const[
-  const Route(path: '/public', name: 'Public', component: PublicComponent)
+  const Route(path: '/public', name: 'Public', component: PublicComponent),
+  const Route(path: '/private', name: 'Private', component: PrivateComponent),
+  const Route(path: '/login', name: 'Login', component: LoginComponent),
 ]
 )
 

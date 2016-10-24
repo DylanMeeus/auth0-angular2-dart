@@ -10,26 +10,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Project name</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
                     <li><a [routerLink]="['Public']">Public</a></li>
-                    <li><a href="#">Contact</a></li> <!-- Need to control this with the angular router -->
-                    <router-outlet></router-outlet>
+                    <li><a [routerLink]="['Private']">Private</a></li>
+                    <li><a [routerLink]="['Login']">Login</a></li>
+                    <div id="routerdiv">
+                        <router-outlet></router-outlet>
+                    </div>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-
-
-    <h1>
-    {{title}}
-    </h1>
-
-        <div id="githubcomponent">
-        <github-component></github-component>
-        </div>
 
 </div>

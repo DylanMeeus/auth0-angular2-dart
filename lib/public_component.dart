@@ -12,7 +12,7 @@ import 'package:angular2/router.dart';
 
 @Component(
     selector: 'public-repolist',
-    templateUrl: '../web/app_component.html',
+    templateUrl: '../web/public.html',
     directives: const [GithubComponent,ROUTER_DIRECTIVES],
     providers: const [GithubService,ROUTER_PROVIDERS]
 )
