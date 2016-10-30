@@ -8,7 +8,7 @@ import 'package:dartblog/services/github_service.dart';
 import 'package:dartblog/repository_component.dart';
 import 'package:dartblog/model/repository.dart';
 import 'package:angular2/router.dart';
-
+import 'package:dartblog/services/user_service.dart';
 
 @Component(
     selector: 'public-repolist',
@@ -24,12 +24,24 @@ import 'package:angular2/router.dart';
  * We can also navigate to the login here, or go to the 'search' feature.
  * When navigating to the search feature, we will redirect to the login page if the user is not yet logged in.
  */
-class PrivateComponent{
+class PrivateComponent implements OnInit{
 
     String title = "Random github repositories";
 
-    PrivateComponent(){
-        print("running the app component"); // this is like console.log when running in the browser
+    final UserService _userService;
+    final Router _router;
+
+    PrivateComponent(this._userService, this._router){
     }
+
+
+
+    void ngOnInit(){
+        bool loggedIn = this._userService.isLoggedIn();
+        if(!loggedIn){
+            this._router.navigate(["/Login",{}]);
+        }
+    }
+
 }
 

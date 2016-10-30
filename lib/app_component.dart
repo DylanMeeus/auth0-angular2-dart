@@ -8,6 +8,7 @@ import 'package:dartblog/private_component.dart';
 import 'package:dartblog/login_component.dart';
 import 'package:dartblog/helpers/apihelper.dart';
 import 'package:dartblog/services/github_service.dart';
+import 'package:dartblog/services/user_service.dart';
 import 'package:dartblog/repository_component.dart';
 import 'package:dartblog/model/repository.dart';
 import 'package:angular2/router.dart';
@@ -17,7 +18,7 @@ import 'package:angular2/router.dart';
 selector: 'my-app',
 templateUrl: '../web/app_component.html',
 directives: const [GithubComponent,ROUTER_DIRECTIVES],
-providers: const [GithubService,ROUTER_PROVIDERS]
+providers: const [GithubService,ROUTER_PROVIDERS, UserService]
 )
 
 
