@@ -12,7 +12,7 @@ import 'package:dartblog/services/user_service.dart';
 
 @Component(
     selector: 'public-repolist',
-    templateUrl: '../web/public.html',
+    templateUrl: '../web/private.html',
     directives: const [GithubComponent,ROUTER_DIRECTIVES],
     providers: const [GithubService,ROUTER_PROVIDERS]
 )
@@ -28,6 +28,8 @@ class PrivateComponent implements OnInit{
 
     String title = "Random github repositories";
 
+    String language;
+
     final UserService _userService;
     final Router _router;
 
@@ -41,6 +43,10 @@ class PrivateComponent implements OnInit{
         if(!loggedIn){
             this._router.navigate(["/Login",{}]);
         }
+    }
+
+    void search(){
+        print(language);
     }
 
 }

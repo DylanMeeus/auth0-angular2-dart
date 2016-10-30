@@ -27,9 +27,9 @@ import 'package:angular2/router.dart';
 class PublicComponent{
 
     String title = "Random github repositories";
+    String testinput = "HelloTest";
 
     PublicComponent(){
-        print("running the app component"); // this is like console.log when running in the browser
     }
 
 

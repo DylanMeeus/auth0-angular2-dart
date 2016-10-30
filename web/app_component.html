@@ -17,6 +17,9 @@
                     <li><a [routerLink]="['Private']">Private</a></li>
                     <li><a [routerLink]="['Login']">Login</a></li>
                 </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a (click)="logout()" href="void(0)">logout</a></li>
+                </ul>
             </div><!--/.nav-collapse -->
             <div id="routerdiv">
                 <router-outlet></router-outlet>

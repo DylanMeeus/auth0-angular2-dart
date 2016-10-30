@@ -22,6 +22,8 @@ class GithubComponent{
 
     final GithubService _githubService;
 
+    @Input() String testinput;
+
     GithubComponent(this._githubService){
         this.getRepositories();
     }
