@@ -1,3 +1,30 @@
-<h1>
-    {{title}}
-</h1>
+<div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a [routerLink]="['Public']">Public</a></li>
+                    <li><a [routerLink]="['Private']">Private</a></li>
+                    <li><a [routerLink]="['Login']">Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a (click)="logout()" href="void(0)">logout</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+            <div id="routerdiv">
+                <router-outlet></router-outlet>
+            </div>
+        </div><!--/.container-fluid -->
+    </nav>
+
+</div>
