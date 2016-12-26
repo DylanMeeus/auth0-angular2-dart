@@ -3,6 +3,7 @@ import 'package:angular2/platform/browser.dart';
 import 'package:dartblog/repository_component.dart';
 import 'package:dartblog/services/github_service.dart';
 import 'package:dartblog/model/repository.dart';
+
 import 'package:angular2/angular2.dart';
 import 'dart:async';
 
@@ -18,11 +19,11 @@ import 'dart:async';
  */
 class GithubComponent{
 
-    Future<List<Repository>> repoList; // this should be an observable.
+    Future<List<Repository>> repoList;
 
     final GithubService _githubService;
 
-    @Input() String testinput;
+    @Input() List<Repository> testinput;
 
     GithubComponent(this._githubService){
         this.getRepositories();

@@ -17,8 +17,7 @@ class Apihelper{
           browserClient = new BrowserClient();
       }
 
-      Future<List<Repository>> getRecentJavascriptRepositories() async {
-          print("In the apiherlper getrecentjavascriptrepos");
+      List<Repository> getRecentJavascriptRepositories() async {
           return await fetchRepositories("language:javascript&sort=updated");
       }
 

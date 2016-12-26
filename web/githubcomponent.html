@@ -1,8 +1,19 @@
 <h1>
     recently updated repositories!
-    {{testinput}}
+
 </h1>
 
+<h3>Testing</h3>
+
+{{testinput}}
+
+
+<li *ngFor="let i of testinput | async">
+   <a [attr.href]="i.url">{{i.shortName}} by {{i.author}}</a>
+</li>
+
+
+<h3>Repositories</h3>
 <div id="repositoryList">
     <li *ngFor="let repo of repoList">
         <a [attr.href]="repo.url">{{repo.shortName}} by {{repo.author}}</a>

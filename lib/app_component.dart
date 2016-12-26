@@ -39,19 +39,19 @@ providers: const [GithubService,ROUTER_PROVIDERS, UserService]
  */
 class AppComponent{
 
-      String title = "Random github repositories";
+      final String title = "Random github repositories";
 
       final UserService _userService;
       final Router _router;
 
-  AppComponent(this._userService, this._router){
-  }
-
-  logout(){
-      bool logoutSuccess = logout();
-      if (logoutSuccess){
-        this._router.navigate(['/Public',{}]);
+      AppComponent(this._userService, this._router){
       }
-  }
+
+      logout(){
+          bool logoutSuccess = logout();
+          if (logoutSuccess){
+            this._router.navigate(['/Public',{}]);
+          }
+      }
 }
 

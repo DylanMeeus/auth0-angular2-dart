@@ -8,6 +8,10 @@ import 'package:dartblog/services/github_service.dart';
 import 'package:dartblog/repository_component.dart';
 import 'package:dartblog/model/repository.dart';
 import 'package:angular2/router.dart';
+import 'package:dartblog/services/github_service.dart';
+import 'package:dartblog/model/repository.dart';
+import 'dart:html';
+import 'package:dartblog/model/repository.dart';
 
 
 @Component(
@@ -27,9 +31,20 @@ import 'package:angular2/router.dart';
 class PublicComponent{
 
     String title = "Random github repositories";
-    String testinput = "HelloTest";
+    List<Repositories> testinput;
 
-    PublicComponent(){
+    final GithubService _githubService;
+
+    PublicComponent(this._githubService){
+        this.testinput = this.getRepositories();
+        print(this.testinput);
+    }
+
+
+    List<Repository> getRepositories() async {
+        var repositories = await (_githubService.getRecentJavascriptRepositories());
+        //this.repoList = repositories;
+        return repositories;
     }
 
 

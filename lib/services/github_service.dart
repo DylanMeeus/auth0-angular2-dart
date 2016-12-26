@@ -21,7 +21,7 @@ class GithubService{
         return this.repositories;
     }
 
-    Future<List<Repository>> getRecentJavascriptRepositories() async {
+    List<Repository> getRecentJavascriptRepositories() async {
         Apihelper helper = new Apihelper();
         return await helper.getRecentJavascriptRepositories();
     }
