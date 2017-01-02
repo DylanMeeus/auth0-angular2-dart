@@ -7,13 +7,13 @@ import 'dart:async';
 /**
  * Class to parse JSON returned by the github api.
  */
-class Apihelper{
+class ApiHelper{
 
   String basePath = "https://api.github.com/search/repositories?q=";
 
   BrowserClient browserClient;
 
-      Apihelper(){
+      ApiHelper(){
           browserClient = new BrowserClient();
       }
 

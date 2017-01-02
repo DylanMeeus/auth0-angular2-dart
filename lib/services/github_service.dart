@@ -22,12 +22,12 @@ class GithubService{
     }
 
     List<Repository> getRepositoriesByLanguage(String language) async {
-        Apihelper helper = new Apihelper();
+        ApiHelper helper = new ApiHelper();
         return await helper.getRepositoriesByLanguage(language);
     }
 
     List<Repository> getRecentJavascriptRepositories() async {
-        Apihelper helper = new Apihelper();
+        ApiHelper helper = new ApiHelper();
         return await helper.getRecentJavascriptRepositories();
     }
 
