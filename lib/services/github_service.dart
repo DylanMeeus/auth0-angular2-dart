@@ -21,6 +21,11 @@ class GithubService{
         return this.repositories;
     }
 
+    List<Repository> getRepositoriesByLanguage(String language) async {
+        Apihelper helper = new Apihelper();
+        return await helper.getRepositoriesByLanguage(language);
+    }
+
     List<Repository> getRecentJavascriptRepositories() async {
         Apihelper helper = new Apihelper();
         return await helper.getRecentJavascriptRepositories();

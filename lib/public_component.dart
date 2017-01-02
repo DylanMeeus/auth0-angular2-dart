@@ -31,19 +31,18 @@ import 'package:dartblog/model/repository.dart';
 class PublicComponent{
 
     String title = "Random github repositories";
-    List<Repositories> testinput;
+    List<Repositories> publicRepositories;
 
     final GithubService _githubService;
 
     PublicComponent(this._githubService){
-        this.testinput = this.getRepositories();
-        print(this.testinput);
+        this.publicRepositories = this.getRepositories();
+        print(this.publicRepositories);
     }
 
 
     List<Repository> getRepositories() async {
         var repositories = await (_githubService.getRecentJavascriptRepositories());
-        //this.repoList = repositories;
         return repositories;
     }
 

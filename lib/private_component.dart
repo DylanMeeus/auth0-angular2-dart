@@ -26,27 +26,46 @@ import 'package:dartblog/services/user_service.dart';
  */
 class PrivateComponent implements OnInit{
 
-    String title = "Random github repositories";
 
+
+    String headerTitle = "Recently updated repositories";
     String language;
 
     final UserService _userService;
     final Router _router;
 
-    PrivateComponent(this._userService, this._router){
+    final GithubService _githubService;
+
+    List<Repositories> privateRepositories;
+
+    PrivateComponent(this._userService, this._router, this._githubService){
+//        bool loggedIn = this._userService.isLoggedIn();
+//        if(!loggedIn){
+//            this._router.navigate(["/Public",{}]);
+//        }
+        privateRepositories = this.getRepositories();
     }
 
 
+    List<Repository> getRepositories() async {
+        var repositories = await (_githubService.getRecentJavascriptRepositories());
+        //this.repoList = repositories;
+        return repositories;
+    }
+
+
+    List<Repository> getRepositoryByLanguage(String language) async {
+        var repositories = await (_githubService.getRepositoriesByLanguage(language));
+        return repositories;
+    }
 
     void ngOnInit(){
-        bool loggedIn = this._userService.isLoggedIn();
-        if(!loggedIn){
-            this._router.navigate(["/Login",{}]);
-        }
+
     }
 
     void search(){
-        print(language);
+        this.privateRepositories = getRepositoryByLanguage(language);
+        this.headerTitle = "Recently updated " + language + " repositories.";
     }
 
 }

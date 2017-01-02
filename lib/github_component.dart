@@ -19,19 +19,7 @@ import 'dart:async';
  */
 class GithubComponent{
 
-    Future<List<Repository>> repoList;
+    @Input() List<Repository> repositories;
 
-    final GithubService _githubService;
-
-    @Input() List<Repository> testinput;
-
-    GithubComponent(this._githubService){
-        this.getRepositories();
-    }
-
-    Future<Null> getRepositories() async {
-        var repositories = await (_githubService.getRecentJavascriptRepositories());
-        this.repoList = repositories;
-    }
 
 }

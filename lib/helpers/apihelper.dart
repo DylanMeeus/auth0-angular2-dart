@@ -17,6 +17,12 @@ class Apihelper{
           browserClient = new BrowserClient();
       }
 
+      // get the recent repositories of the passed language
+      List<Repository> getRepositoriesByLanguage(String language) async{
+        return await fetchRepositories("language:" + language + "&sort=updated");
+      }
+
+      // get the recent javascript repositories
       List<Repository> getRecentJavascriptRepositories() async {
           return await fetchRepositories("language:javascript&sort=updated");
       }

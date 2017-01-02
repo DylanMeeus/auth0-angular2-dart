@@ -48,10 +48,15 @@ class AppComponent{
       }
 
       logout(){
-          bool logoutSuccess = logout();
+          bool logoutSuccess = this._userService.logout();
           if (logoutSuccess){
+            print("Logout was a succes!");
             this._router.navigate(['/Public',{}]);
           }
+      }
+
+      bool isLoggedIn(){
+        return this._userService.isLoggedIn();
       }
 }
 
