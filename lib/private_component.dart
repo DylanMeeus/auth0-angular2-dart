@@ -26,8 +26,6 @@ import 'package:dartblog/services/user_service.dart';
  */
 class PrivateComponent implements OnInit{
 
-
-
     String headerTitle = "Recently updated repositories";
     String language;
 
@@ -39,17 +37,12 @@ class PrivateComponent implements OnInit{
     List<Repositories> privateRepositories;
 
     PrivateComponent(this._userService, this._router, this._githubService){
-//        bool loggedIn = this._userService.isLoggedIn();
-//        if(!loggedIn){
-//            this._router.navigate(["/Public",{}]);
-//        }
         privateRepositories = this.getRepositories();
     }
 
 
     List<Repository> getRepositories() async {
         var repositories = await (_githubService.getRecentJavascriptRepositories());
-        //this.repoList = repositories;
         return repositories;
     }
 

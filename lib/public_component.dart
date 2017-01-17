@@ -17,8 +17,8 @@ import 'package:dartblog/model/repository.dart';
 @Component(
     selector: 'public-repolist',
     templateUrl: '../web/public.html',
-    directives: const [GithubComponent,ROUTER_DIRECTIVES],
-    providers: const [GithubService,ROUTER_PROVIDERS]
+    directives: const [GithubComponent],
+    providers: const [GithubService]
 )
 
 
@@ -30,14 +30,12 @@ import 'package:dartblog/model/repository.dart';
  */
 class PublicComponent{
 
-    String title = "Random github repositories";
     List<Repositories> publicRepositories;
 
     final GithubService _githubService;
 
     PublicComponent(this._githubService){
         this.publicRepositories = this.getRepositories();
-        print(this.publicRepositories);
     }
 
 

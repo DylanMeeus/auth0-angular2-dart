@@ -21,5 +21,4 @@ class GithubComponent{
 
     @Input() List<Repository> repositories;
 
-
 }
