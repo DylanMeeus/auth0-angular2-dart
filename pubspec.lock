@@ -25,6 +25,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.2"
+  auth0_lock:
+    description:
+      path: auth0_lock
+      relative: true
+    source: path
+    version: "0.1.0"
   barback:
     description:
       name: barback
@@ -175,6 +181,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.0+1"
+  observe:
+    description:
+      name: observe
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.10+4"
   package_config:
     description:
       name: package_config

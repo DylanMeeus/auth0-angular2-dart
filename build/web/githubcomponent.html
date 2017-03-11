@@ -1,0 +1,6 @@
+<h3>Repositories</h3>
+<div id="repositoryList">
+    <li *ngFor="let repo of repositories | async">
+       <a [attr.href]="repo.url">{{repo.shortName}} by {{repo.author}}</a>
+    </li>
+</div>
