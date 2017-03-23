@@ -25,6 +25,15 @@
       {
         "1": "package:angular2/router.dart",
         "5": false
+      },
+      {
+        "1": "dart:html",
+        "4": "dom",
+        "5": false
+      },
+      {
+        "1": "package:auth0_lock/auth0_lock.dart",
+        "5": false
       }
     ],
     "6": "main.dart",

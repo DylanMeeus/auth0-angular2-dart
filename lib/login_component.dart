@@ -2,6 +2,8 @@ import 'package:angular2/angular2.dart';
 import 'package:angular2/core.dart';
 import 'package:dartblog/services/user_service.dart';
 import 'package:angular2/router.dart';
+import 'package:auth0_lock/auth0_lock.dart';
+
 
 @Component(
     selector: 'login',
@@ -18,16 +20,26 @@ class LoginComponent {
 
     final Router _router;
 
+    var lock = new Auth0Lock('lockid','domain');
+
     LoginComponent(this._userService, this._router){
 
     }
 
 
+    void processLockAuthentication(data){
+        print("processing lock");
+        print(data);
+        //this._router.navigate(["/" + route,{}]);
+    }
+
     // log the user in, just hardcoded user for now.
     login(){
-        bool loggedIn = this._userService.login(email,password);
+        /*bool loggedIn = this._userService.login(email,password);
         String route = loggedIn ? "Private" : "Public";
-        this._router.navigate(["/" + route,{}]);
+        this._router.navigate(["/" + route,{}]);*/
+        lock.show(options: {'authParams': {'scope': 'openid profile'}});
     }
+
 
 }
