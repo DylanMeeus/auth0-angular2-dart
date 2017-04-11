@@ -20,7 +20,7 @@ class LoginComponent {
 
     final Router _router;
 
-    var lock = new Auth0Lock('lockid','domain');
+    var lock = new Auth0Lock('[secret]','[domain]');
 
     LoginComponent(this._userService, this._router){
 

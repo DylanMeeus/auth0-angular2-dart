@@ -27,9 +27,9 @@ void main(){
   print(hash);
 
   if(hash != null && hash != ""){
-    //var parsedHash = lock.parseHash(hash);
+    var lock = new Auth0Lock('[secret]','[domain]');
+    var parsedHash = lock.parseHash(hash);
   }
-
 
 }
 
